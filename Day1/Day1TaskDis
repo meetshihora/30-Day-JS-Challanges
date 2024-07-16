@@ -1,0 +1,16 @@
+Day 1: Variable And Data Types
+    Activity-1: Variable Declaration
+        Task-1: Declare a variable using VAR.
+        Task-2: Declare a variable using LET.
+    
+    Activity-2: Constant Declaration
+        Task-3: Declare a variable using LET.
+    
+    Activity-3: Data Types
+        Task-4: Create a variable of defferent data types (number, string, boolean, object, array) and log each variable's type using the typeof oprator.
+    
+    Activity-4: Reassigning Variable
+        Task-5: Declare a variable using LET. assign it an intial value, reassign a new value, and log both values to the console.
+
+    Activity-5: Understanding Constant
+        Task-6: Try Reassigning a variable declared with const and observe the error.
