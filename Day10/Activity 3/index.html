@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners Example</title>
+</head>
+<body>
+    
+    <input type="text" id="myInput" placeholder="Type something...">
+    <p id="display"></p>
+
+    <script>
+        const inputField = document.getElementById('myInput');
+        const displayParagraph = document.getElementById('display');
+
+        // Task 5: Add keydown event listener to log the key pressed
+        inputField.addEventListener('keydown', (event) => {
+            console.log(`Key pressed: ${event.key}`);
+        });
+
+        // Task 6: Add keyup event listener to display the current value
+        inputField.addEventListener('keyup', () => {
+            displayParagraph.textContent = inputField.value;
+        });
+    </script>
+</body>
+</html>

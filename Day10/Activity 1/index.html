@@ -1,0 +1,29 @@
+<!-- Task 1: Add click event listener to a button that changes the text content of a paragraph.
+Task 2: Add a double-alick event listener to an image that togstes is visitity. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+</head>
+<body>
+    
+    <h1>Activity 1</h1>
+    <button id="para">Paragraph</button><br><br>
+    <img id="image" alt="image">
+
+    <script>
+
+        const para = document.getElementById("para");
+        const image = document.getElementById("image");
+        para.addEventListener("click", () => { 
+            para.textContent = "Paragraph Clicked";
+        });
+        image.addEventListener("dblclick", () => {
+            image.src = "https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
+        });
+    </script>
+</body>
+</html>

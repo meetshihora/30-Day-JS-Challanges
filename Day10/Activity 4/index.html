@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and Select Event Listeners</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="formInput" name="formInput" placeholder="Type something...">
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="formDataDisplay"></p>
+
+    <select id="mySelect">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+
+    <p id="selectedValueDisplay"></p>
+
+    <script>
+        // Task 7: Add submit event listener to the form
+        const form = document.getElementById('myForm');
+        const formDataDisplay = document.getElementById('formDataDisplay');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            const formData = new FormData(form);
+
+            const formDataEntries = Array.from(formData.entries());
+            console.log('Form Data:', formDataEntries);
+
+            formDataDisplay.textContent = `Form Data: ${JSON.stringify(Object.fromEntries(formDataEntries))}`;
+        });
+
+        // Task 8: Add change event listener to the select dropdown
+        const select = document.getElementById('mySelect');
+        const selectedValueDisplay = document.getElementById('selectedValueDisplay');
+
+        select.addEventListener('change', () => {
+            selectedValueDisplay.textContent = `Selected Value: ${select.value}`;
+        });
+    </script>
+</body>
+</html>

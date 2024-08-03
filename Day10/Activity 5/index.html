@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+    <style>
+        #dynamicContainer {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .dynamicItem {
+            padding: 5px;
+            border: 1px solid #999;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <p id="clickedItemDisplay"></p>
+
+    <div id="dynamicContainer"></div>
+
+    <button id="addElementButton">Add Element</button>
+
+    <p id="dynamicItemDisplay"></p>
+
+    <script>
+        // Task 9: Add click event listener using event delegation
+        const myList = document.getElementById('myList');
+        const clickedItemDisplay = document.getElementById('clickedItemDisplay');
+
+        myList.addEventListener('click', (event) => {
+            if (event.target && event.target.nodeName === 'LI') {
+                console.log(`Clicked list item text: ${event.target.textContent}`);
+                clickedItemDisplay.textContent = `Clicked list item text: ${event.target.textContent}`;
+            }
+        });
+
+        // Task 10: Add event listener to parent element for dynamically added child elements
+        const dynamicContainer = document.getElementById('dynamicContainer');
+        const dynamicItemDisplay = document.getElementById('dynamicItemDisplay');
+        const addElementButton = document.getElementById('addElementButton');
+
+        dynamicContainer.addEventListener('click', (event) => {
+            if (event.target && event.target.classList.contains('dynamicItem')) {
+                console.log(`Clicked dynamic item text: ${event.target.textContent}`);
+                dynamicItemDisplay.textContent = `Clicked dynamic item text: ${event.target.textContent}`;
+            }
+        });
+
+        addElementButton.addEventListener('click', () => {
+            const newElement = document.createElement('div');
+            newElement.className = 'dynamicItem';
+            newElement.textContent = `Dynamic Item ${dynamicContainer.children.length + 1}`;
+            dynamicContainer.appendChild(newElement);
+        });
+    </script>
+</body>
+</html>

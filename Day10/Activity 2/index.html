@@ -1,0 +1,28 @@
+<!-- Task 3: Add a mouseover event listener to an element that changes its background color. -->
+<!-- Task 4: Add a mouseout event listener to an element that resets its background color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+</head>
+<body>
+    <center>
+    <h1>Activity 2</h1>
+    <p id="para">Paragraph</p>
+</center>
+    <script>
+        const para = document.getElementById("para");
+
+        para.addEventListener("mouseover", () => {
+            para.style.backgroundColor = "red";
+        });
+        para.addEventListener("mouseout", () => {
+            para.style.backgroundColor = "white";
+        });
+    </script>
+    
+</body>
+</html>
